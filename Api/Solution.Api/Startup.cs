@@ -1,10 +1,8 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Solution.Domain.Handler.Command;
 
 namespace Solution.Api
 {
@@ -21,8 +19,7 @@ namespace Solution.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddMediatR(typeof(UsuarioCommandHandler));
+            services.AdicionarInjecaoDependencia();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

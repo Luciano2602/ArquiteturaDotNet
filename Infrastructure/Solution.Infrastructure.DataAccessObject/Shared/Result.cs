@@ -5,15 +5,15 @@ namespace Solution.Infrastructure.DataAccessObject
 {
     public class Result
     {
+        public bool Valido { get; private set; }
+        public List<Mensagem> Mensagens { get; private set; }
+        public object Objeto { get; private set; }
+
         public Result()
         {
             Mensagens = new List<Mensagem>();
             Valido = true;
         }
-
-        public bool Valido { get; private set; }
-        public List<Mensagem> Mensagens { get; private set; }
-        public object Objeto { get; private set; }
 
         public void AdicionarMensagem(IList<ValidationFailure> mensagens)
         {
@@ -28,7 +28,7 @@ namespace Solution.Infrastructure.DataAccessObject
             Mensagens.Add(new Mensagem(propriedade, nomeErro));
         }
 
-        public void Invalido()
+        public void Invalidar()
         {
             Valido = false;
         }

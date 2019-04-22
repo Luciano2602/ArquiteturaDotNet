@@ -9,8 +9,6 @@ namespace Solution.Infrastructure.IoC
     {
         protected IUnityContainer container;
 
-        //teste merge
-
         public UnityResolver(IUnityContainer container)
         {
             if (container == null)

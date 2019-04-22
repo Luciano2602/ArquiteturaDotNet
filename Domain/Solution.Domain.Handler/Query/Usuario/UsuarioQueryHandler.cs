@@ -13,15 +13,13 @@ namespace Solution.Domain.Handler.Query.Usuario
                                        IRequestHandler<ListUsuarioQuery, IEnumerable<UsuarioViewModel>>
                                        
     {
-        private readonly Context _context;
-        private readonly UsuarioRepository _usuarioRepository;
-        private readonly UsuarioService _usuarioService;
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IUsuarioService _usuarioService;
 
-        public UsuarioQueryHandler()
+        public UsuarioQueryHandler(IUsuarioRepository usuarioRepository, IUsuarioService usuarioService)
         {
-            _context = new Context();
-            //_usuarioService = new UsuarioService(_context);
-            _usuarioRepository = new UsuarioRepository(_context);
+            _usuarioRepository = usuarioRepository;
+            _usuarioService = usuarioService;
         }
 
         public async Task<UsuarioViewModel> Handle(UsuarioQuery query, CancellationToken cancellationToken)

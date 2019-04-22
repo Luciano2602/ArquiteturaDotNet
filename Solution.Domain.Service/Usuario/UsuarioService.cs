@@ -21,14 +21,20 @@ namespace Solution.Domain.Service
         private readonly UsuarioUpdateCommandValidators _usuarioUpdateCommandValidators;
         private readonly UsuarioDeleteCommandValidators _usuarioDeleteCommandValidators;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository)
+        public UsuarioService(
+            IUsuarioRepository usuarioRepository,
+            UsuarioStatusCommandValidators usuarioStatusCommandValidators,
+            UsuarioInsertCommandValidators usuarioInsertCommandValidators,
+            UsuarioUpdateCommandValidators usuarioUpdateCommandValidators,
+            UsuarioDeleteCommandValidators usuarioDeleteCommandValidators
+            )
         {
             _usuarioRepository = usuarioRepository;
+            _usuarioStatusCommandValidators = usuarioStatusCommandValidators;
+            _usuarioInsertCommandValidators = usuarioInsertCommandValidators;
+            _usuarioUpdateCommandValidators = usuarioUpdateCommandValidators;
+            _usuarioDeleteCommandValidators = usuarioDeleteCommandValidators;
             _result = new Result();
-            _usuarioStatusCommandValidators = new UsuarioStatusCommandValidators();
-            _usuarioInsertCommandValidators = new UsuarioInsertCommandValidators();
-            _usuarioUpdateCommandValidators = new UsuarioUpdateCommandValidators();
-            _usuarioDeleteCommandValidators = new UsuarioDeleteCommandValidators();
         }
 
         #region Validacao
@@ -38,13 +44,13 @@ namespace Solution.Domain.Service
 
             if (!results.IsValid) 
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem(results.Errors);
             }
 
             if (!Existir(command.Codigo))
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem("Banco", "Usuario não encontrado");
             }
 
@@ -64,7 +70,7 @@ namespace Solution.Domain.Service
 
             if (!results.IsValid)
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem(results.Errors);
             }
             
@@ -84,13 +90,13 @@ namespace Solution.Domain.Service
 
             if (!results.IsValid)
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem(results.Errors);
             }
 
             if (!Existir(command.Codigo))
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem("Banco", "Usuario não encontrado");
             }
 
@@ -110,13 +116,13 @@ namespace Solution.Domain.Service
 
             if (!results.IsValid)
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem(results.Errors);
             }
 
             if (!Existir(command.Codigo))
             {
-                _result.Invalido();
+                _result.Invalidar();
                 _result.AdicionarMensagem("Banco", "Usuario não encontrado");
             }
 
