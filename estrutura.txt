@@ -1,0 +1,27 @@
+--Colocar .gitignore
+
+Nome Projeto
+
+ArquiteturaDotNEt
+	Api
+	 Solution.Api
+	 Solution.Api.ViewModel
+	Domain
+	 Solution.Domain 
+	    Command
+	    Entity
+	    Enum
+	    Factory
+	    Query
+	    Validator
+	    ValueObject
+	 Solution.Domain.Handler
+	    Command
+	    Query
+	Infrastructure
+	 Solution.Infrastructure.Database
+	 Solution.Infrastructure.DataAccessObject
+	    Context
+	    Repository
+	    UnitOfWork
+	    

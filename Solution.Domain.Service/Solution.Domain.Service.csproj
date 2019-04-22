@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api\Solution.Api.ViewModel\Solution.Api.ViewModel.csproj" />
+    <ProjectReference Include="..\Domain\Solution.Domain\Solution.Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure\Solution.Infrastructure.DataAccessObject\Solution.Infrastructure.DataAccessObject.csproj" />
+  </ItemGroup>
+
+</Project>

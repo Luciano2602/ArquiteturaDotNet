@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Api\Solution.Api.ViewModel\Solution.Api.ViewModel.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Solution.Infrastructure.DataAccessObject\Solution.Infrastructure.DataAccessObject.csproj" />
+    <ProjectReference Include="..\..\Solution.Domain.Service\Solution.Domain.Service.csproj" />
+    <ProjectReference Include="..\Solution.Domain\Solution.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
