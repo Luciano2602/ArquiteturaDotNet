@@ -8,7 +8,7 @@ namespace Solution.Domain.Validator
         public UsuarioUpdateCommandValidators()
         {
             RuleFor(command => command.Codigo)
-                .Empty()
+                .GreaterThan(0)
                 .WithMessage("O código do usuario deve ser informado");
         }
     }

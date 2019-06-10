@@ -7,7 +7,7 @@ namespace Solution.Infrastructure.DataAccessObject
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable(typeof(Usuario).Name);
 
             builder.Property(x => x.Codigo).ValueGeneratedOnAdd();
             builder.Property(x => x.DataNascimento);
