@@ -19,6 +19,7 @@ namespace Solution.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors();
             services.AdicionarInjecaoDependencia();
         }
 
@@ -34,6 +35,7 @@ namespace Solution.Api
                 app.UseHsts();
             }
 
+            app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseHttpsRedirection();
             app.UseMvc();
         }

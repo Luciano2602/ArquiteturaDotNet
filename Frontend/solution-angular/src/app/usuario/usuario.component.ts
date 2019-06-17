@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuerioService } from './usuario.service';
+import { UsuarioService } from './usuario.service';
 import { UsuarioViewModel } from './usuario.vm';
 
 @Component({
@@ -9,11 +9,11 @@ import { UsuarioViewModel } from './usuario.vm';
 export class UsuarioComponent implements OnInit {
     usuarios: UsuarioViewModel[] = [];
 
-    constructor(private _usuarioService: UsuerioService) { }
+    constructor(private _usuarioService: UsuarioService) { }
 
     ngOnInit(): void {
-        this._usuarioService.ListarTodos().subscribe((result: UsuarioViewModel[]) => {
-            this.usuarios = result;
+        this._usuarioService.ListarTodos().subscribe((usuarios: UsuarioViewModel[]) => {
+            this.usuarios = usuarios;
             console.log(this.usuarios);
         });
     }

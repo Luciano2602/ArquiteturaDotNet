@@ -15,8 +15,8 @@ namespace Solution.Api
         public static void AdicionarInjecaoDependencia(this IServiceCollection services)
         {
             services.AddMediatR(typeof(UsuarioCommandHandler));
-            //services.AddDbContext<Context>(x => x.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CadastroUsuario;Trusted_Connection=true;"));
-            services.AddDbContext<Context>(x => x.UseSqlServer("Data Source=DESKTOP-EPIOHMM;Initial Catalog=CadastroUsuario;Integrated Security=True"));
+            services.AddDbContext<Context>(x => x.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CadastroUsuario;Trusted_Connection=true;"));
+            //services.AddDbContext<Context>(x => x.UseSqlServer("Data Source=DESKTOP-EPIOHMM;Initial Catalog=CadastroUsuario;Integrated Security=True"));
             services.AdicionarClassesComInterfaces(typeof(IUsuarioRepository));
             services.AdicionarClassesComInterfaces(typeof(IUsuarioService));
             services.AdicionarClasses(typeof(UsuarioBaseCommandValidators<>));
