@@ -4,7 +4,8 @@ import { UsuarioViewModel } from './usuario.vm';
 
 @Component({
     selector: 'sl-usuario',
-    templateUrl: './usuario.component.html'
+    templateUrl: './usuario.component.html',
+    styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
     usuarios: UsuarioViewModel[] = [];
@@ -16,5 +17,9 @@ export class UsuarioComponent implements OnInit {
             this.usuarios = usuarios;
             console.log(this.usuarios);
         });
+    }
+
+    excluir(usuario: UsuarioViewModel) {
+        console.log(usuario);
     }
 }
